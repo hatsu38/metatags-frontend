@@ -1,0 +1,16 @@
+.container{
+  margin: 12px;
+}
+.siteTitleLink{
+  text-decoration: none;
+}
+
+.siteTitleLink{
+  .siteTitle{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    line-height: 20px;
+    margin-bottom: 3px;
+  }
+}

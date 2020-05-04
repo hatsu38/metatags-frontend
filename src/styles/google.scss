@@ -1,0 +1,26 @@
+.google{
+  // display: flex;
+  .pc{
+    width: 600px;
+  }
+  .sp{
+    .siteTitleLink{
+      .siteTitle{
+        margin: 0;
+      }
+    }
+  }
+}
+.google-site-url{
+  font-size: 14px;
+  line-height: 16px;
+  color: #006621;
+  .card-seo-google__url-arrow{
+    vertical-align: middle;
+    margin-left: 3px;
+    border-width: 5px 4px 0 4px;
+    border-style: solid;
+    border-color: #006621 transparent;
+    display: inline-block;
+  }
+}

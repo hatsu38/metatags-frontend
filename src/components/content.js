@@ -1,22 +1,27 @@
 import React, { Component } from 'react';
-import { TextField} from '@material-ui/core';
+import { TextField } from '@material-ui/core';
 import axios from "axios";
+import Google from './google'
+import Facebook from './facebook'
+import '../styles/content.scss';
 
 class Content extends Component {
   constructor(props) {
     super(props);
     this.state = {
       meta: '',
-      url: ''
+      url: 'https://material-ui.com/api/card/'
     };
     this.getMetatags = this.getMetatags.bind(this)
     this.handleChange = this.handleUrlChange.bind(this)
   }
 
-  async getMetatags(e) {
-    e.preventDefault();
-    console.log("========")
-    console.log(this.state.url)
+  componentDidMount() {
+    this.getMetatags()
+  }
+
+  async getMetatags() {
+    // e.preventDefault();
     const API_URL = 'https://metatags-api.herokuapp.com/api/v1/scrape'
     const response = await axios.get(API_URL, { params: {url: this.state.url }});
     this.setState({
@@ -31,12 +36,13 @@ class Content extends Component {
   render() {
     return (
       <React.Fragment>
-        <form noValidate autoComplete="off" onSubmit={this.getMetatags} >
-          <TextField id="filled-search" label="URL" type="search" variant="filled" fullWidth onChange={this.handleChange} />
-        </form>
-        <p>{this.state.url}</p>
-        <p>{this.state.meta.title}</p>
-        <p>{this.state.meta.description}</p>
+        <div className='container'>
+          <form noValidate autoComplete="off" onSubmit={this.getMetatags} >
+            <TextField id="filled-search" label="URL" type="search" variant="filled" fullWidth onChange={this.handleChange} />
+          </form>
+          <Google meta={this.state.meta} />
+          <Facebook meta={this.state.meta} />
+        </div>
       </React.Fragment>
     )
   }
