@@ -3,6 +3,7 @@ import { TextField } from '@material-ui/core';
 import axios from "axios";
 import Google from './google'
 import Facebook from './facebook'
+import Twitter from './twitter'
 import '../styles/content.scss';
 
 class Content extends Component {
@@ -42,6 +43,7 @@ class Content extends Component {
           </form>
           <Google meta={this.state.meta} />
           <Facebook meta={this.state.meta} />
+          <Twitter meta={this.state.meta} />
         </div>
       </React.Fragment>
     )
