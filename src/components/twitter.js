@@ -11,20 +11,20 @@ class Twitter extends Component {
           <div className="twitter">
             <h4 className="group__title"><span>Twitter</span></h4>
             <Card className='card'>
-              <div class="card-twitter">
+              <div className="card-twitter">
                 <CardMedia
-                  image={this.props.meta.og_image}
-                  title={this.props.meta.title}
+                  image={this.props.image}
+                  title={this.props.title}
                   className='card-twitter__image'
                 />
-                <div class="card-twitter__text">
-                  <span class="card-twitter__title">
-                    {this.props.meta.title}
+                <div className="card-twitter__text">
+                  <span className="card-twitter__title">
+                    {this.props.title}
                   </span>
-                  <span class="card-twitter__description">
-                    {this.props.meta.description}
+                  <span className="card-twitter__description">
+                    {this.props.description}
                   </span>
-                  <span class="card-twitter__domain">
+                  <span className="card-twitter__domain">
                   {this.props.meta.domain}
                   </span>
                 </div>

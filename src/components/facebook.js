@@ -12,22 +12,22 @@ class Facebook extends Component {
           <h4 className="group__title"><span>Facebook</span></h4>
               <Card className='card'>
                 <CardMedia
-                  image={this.props.meta.og_image}
-                  title={this.props.meta.title}
+                  image={this.props.image}
+                  title={this.props.title}
                   className='facebook-card-media'
                 />
-                <div class="card-facebook__text">
-                  <span class="card-facebook__link">
+                <div className="card-facebook__text">
+                  <span className="card-facebook__link">
                     {this.props.meta.domain}
                   </span>
-                  <div class="card-facebook__content">
+                  <div className="card-facebook__content">
                     <div>
-                      <div class="card-facebook__title">
-                        {this.props.meta.title}
+                      <div className="card-facebook__title">
+                        {this.props.title}
                       </div>
                     </div>
-                    <span class="card-facebook__description js-preview-description">
-                      {this.props.meta.description}
+                    <span className="card-facebook__description js-preview-description">
+                      {this.props.description}
                     </span>
                   </div>
                 </div>
