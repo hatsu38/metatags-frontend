@@ -1,0 +1,34 @@
+.meta-group-card__media_block{
+  position: relative;
+}
+.meta-group-card__media{
+  height: 200px;
+  width: 350px;
+  margin: 0 auto;
+}
+.meta-group__label-file{
+  position: absolute;
+  top: 50%;
+  right: 0;
+  left: 0;
+  text-align: center;
+}
+.meta-group__title{
+  display: flex;
+  margin-bottom: 0.5em;
+  font-size: 14px;
+  letter-spacing: 0.015em;
+  color: #A3B3CA;
+  .metadata-title__count{
+    position: relative;
+    top: 3px;
+    margin-left: auto;
+    font-size: 11px;
+  }
+}
+.meta-group__chip{
+  margin: 1.5px;
+}
+.metadata__textarea{
+  padding: 0.5em 1em;
+}
