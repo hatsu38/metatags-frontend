@@ -19,7 +19,7 @@ class Previews extends Component {
       const thumbs = files.map(file => (
         <div>
           <div>
-            <img src={file.preview}　class="meta-group-card__media" />
+            <img src={file.preview}　className="meta-group-card__media" />
           </div>
         </div>
       ));

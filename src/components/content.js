@@ -12,6 +12,9 @@ class Content extends Component {
     super(props);
     this.state = {
       meta: '',
+      title: '',
+      description: '',
+      image: '',
       url: 'https://ninteiyakuzaishi.m3.com/'
     };
     this.getMetatags = this.getMetatags.bind(this)
@@ -29,6 +32,15 @@ class Content extends Component {
     this.setState({
       meta: response.data.metatags
     })
+    this.setState({
+      title: response.data.metatags.title
+    })
+    this.setState({
+      description: response.data.metatags.description
+    })
+    this.setState({
+      image: response.data.metatags.og_image
+    })
   }
 
   getMetatagsWithSubmit(e) {
@@ -38,6 +50,16 @@ class Content extends Component {
 
   handleUrlChange(e) {
     this.setState({url: e.target.value})
+  }
+
+  handleChangeTitle(value) {
+    this.setState({title: value });
+  }
+  handleChangeDescription(value) {
+    this.setState({description: value });
+  }
+  handleChangeImage(value) {
+    this.setState({image: value });
   }
 
   render() {
@@ -57,12 +79,20 @@ class Content extends Component {
           <h3>Metatags</h3>
           <Grid container spacing={1}>
             <Grid item xs={4}>
-              <Metatags meta={this.state.meta} />
+              <Metatags
+              meta={this.state.meta}
+              title={this.state.title}
+              description={this.state.description}
+              image={this.state.image}
+              handleChangeTitle={(value) => { this.handleChangeTitle(value); }}
+              handleChangeDescription={(value) => { this.handleChangeDescription(value); }}
+              handleChangeImage={(value) => { this.handleChangeImage(value); }}
+              />
             </Grid>
             <Grid item xs={8}>
-              <Google meta={this.state.meta} />
-              <Facebook meta={this.state.meta} />
-              <Twitter meta={this.state.meta} />
+              <Google meta={this.state.meta} title={this.state.title} description={this.state.description} image={this.state.image} />
+              <Facebook meta={this.state.meta} title={this.state.title} description={this.state.description} image={this.state.image} />
+              <Twitter meta={this.state.meta} title={this.state.title} description={this.state.description} image={this.state.image} />
             </Grid>
           </Grid>
         </div>

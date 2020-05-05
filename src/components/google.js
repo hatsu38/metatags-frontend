@@ -10,13 +10,13 @@ class Google extends Component {
           <div className="google">
             <h4 className="group__title"><span>Google</span></h4>
             <Link to={this.props.meta.url} className='siteTitleLink'>
-              <h3 className='siteTitle'>{this.props.meta.title}</h3>
+              <h3 className='siteTitle'>{this.props.title}</h3>
             </Link>
             <div className="google-site-url">
               <span>{this.props.meta.url}</span>
               <span className="card-seo-google__url-arrow"></span>
             </div>
-            <div>{this.props.meta.description}</div>
+            <div>{this.props.description}</div>
           </div>
         </BrowserRouter>
       </React.Fragment>
