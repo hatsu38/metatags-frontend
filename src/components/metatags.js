@@ -1,59 +1,49 @@
 // import React, { Component, useCallback } from 'react';
-import React, {Component, useEffect, useState} from 'react';
-import { TextField, Chip, CardMedia } from '@material-ui/core';
-import {useDropzone} from 'react-dropzone'
+import React, {Component } from 'react';
+import { TextField, Chip, CardMedia, Button } from '@material-ui/core';
 import '../styles/metatags.scss';
 
-
 class Metatags extends Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      image_src: []
+    };
+    this.handleChangeFile = this.handleChangeFile.bind(this)
+  }
+  handleChangeFile(e) {
+    const files = e.target.files;
+    const createObjectURL = (window.URL || window.webkitURL).createObjectURL || window.createObjectURL;
+    const image_url = createObjectURL(files[0]);
+    this.setState({image_src: image_url});
+  }
+
   render() {
     const keywordsAry = String(this.props.meta.keywords).split(',')
     const keywords = keywordsAry.map((keyword,index) =>
       <Chip label={keyword} className='meta-group__chip' />
     );
-    function Previews(props) {
-      const [files, setFiles] = useState([]);
-      const {getRootProps, getInputProps} = useDropzone({
-        accept: 'image/*',
-        onDrop: acceptedFiles => {
-          setFiles(acceptedFiles.map(file => Object.assign(file, {
-            preview: URL.createObjectURL(file)
-          })));
-        }
-      });
-      const thumbs = files.map(file => (
-        <div>
-          <div>
-            <img src={file.preview}　class="meta-group-card__media" />
-          </div>
-        </div>
-      ));
-      useEffect(() => () => {
-        // Make sure to revoke the data uris to avoid memory leaks
-        files.forEach(file => URL.revokeObjectURL(file.preview));
-      }, [files]);
-      return (
-        <section className="container">
-          <div {...getRootProps({className: 'dropzone'})}>
-            <input {...getInputProps()} />
-            <p>Drag & Drop or Click</p>
-          </div>
-          <aside>
-            {thumbs}
-          </aside>
-        </section>
-      );
-    }
     return (
       <React.Fragment>
         <h4>Image</h4>
         <div className='meta-group-card__media_block'>
-        <Previews />
         <CardMedia
           image={this.props.meta.og_image}
           title={this.props.meta.title}
           className='meta-group-card__media'
         />
+        <input
+          accept="image/*"
+          id="contained-button-file"
+          type="file"
+          style={{ display: "none" }}
+          onChange={this.handleChangeFile}
+        />
+        <label htmlFor="contained-button-file">
+          <Button variant="contained" color="primary" component="span">
+            Upload
+          </Button>
+        </label>
         </div>
       <h4 className='meta-group__title'>
         Title
@@ -84,10 +74,10 @@ class Metatags extends Component {
       <h4 className='meta-group__title'>
         Keywords
         <span class='metadata-title__count'>
-          {keywordsAry != 'null' && keywordsAry.length}
+          {keywordsAry !== 'null' && keywordsAry.length}
         </span>
       </h4>
-      {keywordsAry != 'null' && keywords}
+      {keywordsAry !== 'null' && keywords}
       </React.Fragment>
     )
   }
