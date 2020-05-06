@@ -1,13 +1,7 @@
 .facebook{
   .card{
     width: 527px;
-  }
-  .sp{
-    .siteTitleLink{
-      .siteTitle{
-        margin: 0;
-      }
-    }
+    max-width: 100%;
   }
   .facebook-card-media{
     height: 273px;
@@ -36,11 +30,12 @@
       text-transform: uppercase;
       user-select: none;
       white-space: nowrap;
-      width: 501px;
+      max-width: 100%;
       word-wrap: break-word;
       -webkit-border-horizontal-spacing: 0px;
       -webkit-border-vertical-spacing: 0px;
       -webkit-font-smoothing: antialiased;
+      width: 501px;
     }
     .card-facebook__content{
       border-collapse: separate;

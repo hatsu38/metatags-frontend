@@ -15,7 +15,7 @@ class Content extends Component {
       title: '',
       description: '',
       image: '',
-      url: 'https://ninteiyakuzaishi.m3.com/'
+      url: 'https://www.producthunt.com/'
     };
     this.getMetatags = this.getMetatags.bind(this)
     this.getMetatagsWithSubmit = this.getMetatagsWithSubmit.bind(this)
@@ -69,7 +69,7 @@ class Content extends Component {
           <form noValidate autoComplete="off" onSubmit={this.getMetatagsWithSubmit} >
             <TextField
               label="URL"
-              type="search"
+              type="url"
               variant="filled"
               fullWidth
               defaultValue={this.state.url}
@@ -77,8 +77,8 @@ class Content extends Component {
             />
           </form>
           <h3>Metatags</h3>
-          <Grid container spacing={1}>
-            <Grid item xs={4}>
+          <Grid container>
+            <Grid item xs={12} sm={4}>
               <Metatags
               meta={this.state.meta}
               title={this.state.title}
@@ -89,7 +89,7 @@ class Content extends Component {
               handleChangeImage={(value) => { this.handleChangeImage(value); }}
               />
             </Grid>
-            <Grid item xs={8}>
+            <Grid item xs={12} sm={8}>
               <Google meta={this.state.meta} title={this.state.title} description={this.state.description} image={this.state.image} />
               <Facebook meta={this.state.meta} title={this.state.title} description={this.state.description} image={this.state.image} />
               <Twitter meta={this.state.meta} title={this.state.title} description={this.state.description} image={this.state.image} />

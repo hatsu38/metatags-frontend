@@ -3,8 +3,11 @@
 }
 .meta-group-card__media{
   height: 200px;
-  width: 350px;
+  max-width: 100%;
   margin: 0 auto;
+  border: 1px solid #dde5e8;
+  border-radius: 8px;
+  width: 350px;
 }
 .meta-group__label-file{
   position: absolute;
@@ -31,4 +34,9 @@
 }
 .metadata__textarea{
   padding: 0.5em 1em;
+}
+.meta-group-card__media_label{
+  display: block;
+  text-align: center;
+  margin: 5px;
 }
