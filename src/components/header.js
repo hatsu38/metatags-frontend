@@ -1,15 +1,13 @@
 import React, { Component } from 'react';
-import { AppBar, Toolbar, Typography } from '@material-ui/core';
-
+import { AppBar, Toolbar } from '@material-ui/core';
+import '../styles/header.scss'
 class Header extends Component {
   render() {
     return (
       <React.Fragment>
         <AppBar position='static'>
-          <Toolbar>
-            <Typography type='title'>
-              メタタグ
-            </Typography>
+          <Toolbar className='MuiTypography-alignCenter'>
+            <h1 className='site-title'>Metatag Check</h1>
           </Toolbar>
         </AppBar>
       </React.Fragment>

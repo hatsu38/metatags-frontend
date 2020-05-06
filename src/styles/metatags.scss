@@ -40,3 +40,24 @@
   text-align: center;
   margin: 5px;
 }
+.meta-group__pre{
+  display: block;
+  width: 100%;
+  padding: 0.5em;
+  font-size: 16px;
+  font-family: monospace;
+  border: none;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  transition: all 375ms ease-out;
+  background: #EBF1FA;
+  overflow-x: auto;
+  text-align: left;
+  .meta-group__code{
+    display: block;
+    overflow-x: auto;
+    padding: 0.5em;
+    background: #EBF1FA;
+    color: #0048ab;
+  }
+}
