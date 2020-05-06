@@ -5,6 +5,7 @@ import Google from './google'
 import Facebook from './facebook'
 import Twitter from './twitter'
 import Metatags from './metatags'
+import Tagcode from './tagcode'
 import '../styles/content.scss';
 
 class Content extends Component {
@@ -76,9 +77,9 @@ class Content extends Component {
               onChange={this.handleChange}
             />
           </form>
-          <h3>Metatags</h3>
           <Grid container>
             <Grid item xs={12} sm={4}>
+              <h3 className='grid-title'>Metatags</h3>
               <Metatags
               meta={this.state.meta}
               title={this.state.title}
@@ -90,9 +91,31 @@ class Content extends Component {
               />
             </Grid>
             <Grid item xs={12} sm={8}>
-              <Google meta={this.state.meta} title={this.state.title} description={this.state.description} image={this.state.image} />
-              <Facebook meta={this.state.meta} title={this.state.title} description={this.state.description} image={this.state.image} />
-              <Twitter meta={this.state.meta} title={this.state.title} description={this.state.description} image={this.state.image} />
+              <h3 className='grid-title'>Preview</h3>
+              <Tagcode
+                meta={this.state.meta}
+                title={this.state.title}
+                description={this.state.description}
+                image={this.state.image}
+              />
+              <Google
+                meta={this.state.meta}
+                title={this.state.title}
+                description={this.state.description}
+                image={this.state.image}
+              />
+              <Facebook
+                meta={this.state.meta}
+                title={this.state.title}
+                description={this.state.description}
+                image={this.state.image}
+              />
+              <Twitter
+                meta={this.state.meta}
+                title={this.state.title}
+                description={this.state.description}
+                image={this.state.image}
+              />
             </Grid>
           </Grid>
         </div>
