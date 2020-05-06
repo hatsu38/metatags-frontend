@@ -71,9 +71,9 @@ export default function Tagcode(props) {
               </code>
             </pre>
             <div class="modal__actions">
-              <div class="modal__actions-helper">
+              <p class="modal__actions-helper">
                 Copy the code into your website <code>&lt;head&gt;</code>
-              </div>
+              </p>
               <ClickAwayListener onClickAway={handleTooltip}>
                 <Tooltip
                   PopperProps={{
