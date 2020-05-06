@@ -1,6 +1,7 @@
 // import React, { Component, useCallback } from 'react';
 import React, {Component } from 'react';
 import { TextField, Chip, CardMedia, Button } from '@material-ui/core';
+import CloudUploadIcon from '@material-ui/icons/CloudUpload';
 import '../styles/metatags.scss';
 
 class Metatags extends Component {
@@ -28,7 +29,7 @@ class Metatags extends Component {
     );
     return (
       <React.Fragment>
-        <h4>Image</h4>
+        <h4 className='meta-group__title'>Image</h4>
         <div className='meta-group-card__media_block'>
           <CardMedia
             image={this.props.image}
@@ -42,8 +43,12 @@ class Metatags extends Component {
             style={{ display: "none" }}
             onChange={this.handleChangeFile}
           />
-          <label htmlFor="contained-button-file">
-            <Button variant="contained" color="primary" component="span">
+          <label htmlFor="contained-button-file" className='meta-group-card__media_label'>
+            <Button
+              variant="contained"
+              color="primary"
+              startIcon={<CloudUploadIcon />}
+            >
               Upload
             </Button>
           </label>
@@ -79,10 +84,10 @@ class Metatags extends Component {
         <h4 className='meta-group__title'>
           Keywords
           <span className='metadata-title__count'>
-            {keywordsAry !== 'null' && keywordsAry.length}
+            {keywordsAry[0] !== "null" && keywordsAry.length}
           </span>
         </h4>
-        {keywordsAry !== 'null' && keywords}
+        {keywordsAry[0] !== "null" && keywords}
       </React.Fragment>
     )
   }
