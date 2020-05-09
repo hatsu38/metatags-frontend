@@ -1,7 +1,7 @@
 # Metatags Frontednd
 
 ## Overview
-![metatag-check-gif](https://hatsu-products.s3-ap-northeast-1.amazonaws.com/MetatagCheck/MetatagChecker.gif)
+![Demo](https://raw.githubusercontent.com/wiki/hatsu38/metatags-frontend/images/MetatagChecker.gif)
 
 フォームに入力されたURLのMetaタグを解析し、GoogleやSNSでの表示を確認できるツールです。解析されたHTMLメタタグのコピーも可能です。
 
