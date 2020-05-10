@@ -46,7 +46,9 @@ class Metatags extends Component {
           <label htmlFor="contained-button-file" className='meta-group-card__media_label'>
             <Button
               variant="contained"
-              color="primary"
+              color="transparent"
+              className='main-color'
+              component="span"
               startIcon={<CloudUploadIcon />}
             >
               Upload

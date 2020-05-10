@@ -6,6 +6,7 @@ import Facebook from './facebook'
 import Twitter from './twitter'
 import Metatags from './metatags'
 import Tagcode from './tagcode'
+import Gallery from './gallery'
 import '../styles/content.scss';
 
 class Content extends Component {
