@@ -45,3 +45,19 @@
 .MuiGrid-container > div{
   padding: 8px;
 }
+
+.main-color{
+  background: linear-gradient(-135deg,#561bf6 0,rgba(86,27,247,.5) 100%);
+  * {
+    color: #fff;
+  }
+}
+.gallery{
+  display: 'flex';
+  flex-wrap: 'wrap';
+  justify-content: 'space-around';
+  overflow: 'hidden';
+  .gallery-image{
+    height: 400px;
+  }
+}
