@@ -23,7 +23,7 @@ class Metatags extends Component {
   }
 
   render() {
-    const keywordsAry = String(this.props.meta.keywords).split(',')
+    const keywordsAry = String(this.props.meta.keyword).split(',')
     const keywords = keywordsAry.map((keyword,index) =>
       <Chip label={keyword} key={index} className='meta-group__chip' />
     );
