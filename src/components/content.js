@@ -68,16 +68,28 @@ class Content extends Component {
     return (
       <React.Fragment>
         <div className='container'>
-          <form noValidate autoComplete="off" onSubmit={this.getMetatagsWithSubmit} >
-            <TextField
-              label="URL"
-              type="url"
-              variant="filled"
-              fullWidth
-              defaultValue={this.state.url}
-              onChange={this.handleChange}
-            />
-          </form>
+          <Grid container spacing={2}>
+            <Grid item xs={12} sm={9} md={8}>
+              <form noValidate autoComplete="off" onSubmit={this.getMetatagsWithSubmit} >
+                <TextField
+                  label="URL"
+                  type="url"
+                  variant="filled"
+                  fullWidth
+                  defaultValue={this.state.url}
+                  onChange={this.handleChange}
+                />
+              </form>
+            </Grid>
+            <Grid item xs={12} sm={3} md={4}>
+              <Tagcode
+                meta={this.state.meta}
+                title={this.state.title}
+                description={this.state.description}
+                image={this.state.image}
+              />
+            </Grid>
+          </Grid>
           <Grid container>
             <Grid item xs={12} sm={4}>
               <h3 className='grid-title'>Metatags</h3>
@@ -93,12 +105,7 @@ class Content extends Component {
             </Grid>
             <Grid item xs={12} sm={8}>
               <h3 className='grid-title'>Preview</h3>
-              <Tagcode
-                meta={this.state.meta}
-                title={this.state.title}
-                description={this.state.description}
-                image={this.state.image}
-              />
+
               <Google
                 meta={this.state.meta}
                 title={this.state.title}
