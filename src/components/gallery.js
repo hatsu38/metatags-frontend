@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
-import GridList from '@material-ui/core/GridList';
-import GridListTile from '@material-ui/core/GridListTile';
-import GridListTileBar from '@material-ui/core/GridListTileBar';
+import Grid from '@material-ui/core/Grid';
+import Card from '@material-ui/core/Card';
+import CardActionArea from '@material-ui/core/CardActionArea';
+import CardContent from '@material-ui/core/CardContent';
+import CardMedia from '@material-ui/core/CardMedia';
+import Typography from '@material-ui/core/Typography';
 import no_image from '../no_image.png';
 import axios from "axios";
+import '../styles/gallery.scss';
 
 class Gallery extends Component {
   constructor() {
@@ -23,26 +27,34 @@ class Gallery extends Component {
   }
 
   render() {
-    const metatags = this.state.metas.map((metatag) => (
-      <GridListTile key={metatag.id}>
-        if(metatag.og_image) {
-          <img src={metatag.og_image} alt={metatag.title} />
-        } else {
-          <img src={no_image} alt={metatag.title} />
-        }
-        <GridListTileBar
-          title={metatag.title}
-          subtitle={<span>description: {metatag.description}</span>}
-        />
-      </GridListTile>
+    const metatagsCard = this.state.metas.map((metatag) => (
+      <Grid item xs={12} sm={4}>
+        <Card>
+          <CardActionArea>
+            <CardMedia
+              className='cardMedia'
+              image={metatag.og_image ? metatag.og_image : no_image}
+              title={metatag.title}
+            />
+            <CardContent>
+              <Typography gutterBottom variant="h5" component="h5">
+                {metatag.title}
+              </Typography>
+            </CardContent>
+          </CardActionArea>
+        </Card>
+      </Grid>
     ));
 
     return (
       <React.Fragment>
         <div className='gallery'>
-          <GridList className='gallery-image' cols={3} cellHeight={200} spacing={3}>
-            {metatags}
-          </GridList>
+          <div class="gallery-main-text">
+            <h3 class="gallery-main-title">Website Meta Tags Gallery</h3>
+          </div>
+          <Grid container spacing={3}>
+            {metatagsCard}
+          </Grid>
         </div>
       </React.Fragment>
     )

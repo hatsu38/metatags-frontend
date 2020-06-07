@@ -44,7 +44,7 @@ export default function Tagcode(props) {
       <Button
         variant="outlined"
         color="primary"
-        size="small"
+        className='tag-copy-design'
         startIcon={<CodeIcon />}
         onClick={handleModal}
       >
