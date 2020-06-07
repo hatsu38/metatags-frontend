@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Grid from '@material-ui/core/Grid';
+import Button from '@material-ui/core/Button';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardContent from '@material-ui/core/CardContent';
@@ -13,17 +14,19 @@ class Gallery extends Component {
   constructor() {
     super();
     this.state = {
-      metas: []
+      metas: [],
+      page: 1
     }
+    this.getMetatags = this.getMetatags.bind(this)
   }
   componentDidMount() {
     this.getMetatags()
   }
-
   async getMetatags() {
-    const API_URL = 'https://metatags-api.herokuapp.com/api/v1/metatags'
+    const API_URL = `https://metatags-api.herokuapp.com/api/v1/metatags?page=${this.state.page}`
     const response = await axios.get(API_URL);
-    this.setState({ metas: response.data.metatags })
+    this.setState({ metas: this.state.metas.concat(response.data.metatags) })
+    this.setState({ page: this.state.page+1 })
   }
 
   render() {
@@ -55,6 +58,11 @@ class Gallery extends Component {
           <Grid container spacing={3}>
             {metatagsCard}
           </Grid>
+          <div class='button-group'>
+            <Button variant="contained" className="moreReadButton main-color" onClick={this.getMetatags}>
+              もっと見る
+            </Button>
+          </div>
         </div>
       </React.Fragment>
     )
