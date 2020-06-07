@@ -8,7 +8,7 @@ class Header extends Component {
       <React.Fragment>
         <AppBar position='static' color="transparent" className='header main-color'>
           <Toolbar className='MuiTypography-alignCenter'>
-            <h1 className='site-title'>Metatag Check</h1>
+            <h1 className='site-title'>メタタグチェッカー</h1>
           </Toolbar>
         </AppBar>
       </React.Fragment>
