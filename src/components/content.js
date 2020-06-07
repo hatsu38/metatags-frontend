@@ -119,6 +119,7 @@ class Content extends Component {
               />
             </Grid>
           </Grid>
+          <Gallery />
         </div>
       </React.Fragment>
     )
