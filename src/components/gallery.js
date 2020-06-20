@@ -53,7 +53,7 @@ class Gallery extends Component {
       <React.Fragment>
         <div className='gallery'>
           <div class="gallery-main-text">
-            <h3 class="gallery-main-title">Website Meta Tags Gallery</h3>
+            <h3 id="metatags-gallery-title" class="gallery-main-title">Website Meta Tags Gallery</h3>
           </div>
           <Grid container spacing={3}>
             {metatagsCard}
